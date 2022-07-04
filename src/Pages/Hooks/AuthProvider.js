@@ -3,12 +3,12 @@ import useFirebases from './useFirebases';
 
 
 export const AuthContext = createContext(null);
-const AuthProvider = ({childern}) => {
+const AuthProvider = ({children}) => {
     const allContexts = useFirebases()
     return (
        
           <AuthContext.Provider value={allContexts}>
-            {childern}
+            {children}
         </AuthContext.Provider> 
        
     );

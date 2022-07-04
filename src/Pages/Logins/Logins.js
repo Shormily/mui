@@ -5,16 +5,40 @@ import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { Container, Grid, Typography, Button, TextField } from "@mui/material";
+import { Container, Grid, Typography, Button, TextField, Alert, CircularProgress } from "@mui/material";
 import login from "../images/login.png";
 import React from "react";
-import { NavLink } from "react-router-dom";
-// import useAuth from "../Hooks/useAuth";
-import useFirebases from "../Hooks/useFirebases";
+import { NavLink, useHistory,  } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
+import swal from "sweetalert";
+
 
 export default function Logins() {
-  const { signInUsingGoogle } = useFirebases();
+  const { signInUsingGoogle,isLoading,user,authError, setIsLoading} = useAuth()
   
+  const history = useHistory();
+  
+
+
+  const hanldeGoogleLogin = () => {
+    signInUsingGoogle()
+      .then(() => {
+        history.push("/");
+        swal({
+          title: "Successfully Sign In!!",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        swal({
+          text: error.message,
+          icon: "error",
+        });
+      })
+      .finally(() => setIsLoading(false));
+  };
+
+
   const [values, setValues] = React.useState({
     amount: "",
     password: "",
@@ -99,27 +123,34 @@ export default function Logins() {
                     </InputAdornment>
                   }
                 />
+               
                 <NavLink
                   to="/register"
                   style={{
                     textDecoration: "none",
                     color: "darkblue",
                     marginTop: 5,
+                    marginButtom: 5,
                   }}
                 >
                   New user? Please Register
                 </NavLink>
+                
                 <Button
                   style={{ backgroundColor: "darkblue", marginTop: 20 }}
                   variant="contained"
                   sx={{ width: "50%" }}
-                  onClick={signInUsingGoogle}
+                  onClick={hanldeGoogleLogin}
                 >
                   Login
                 </Button>
+                {isLoading && <CircularProgress/>}
+          {user?.email &&  <Alert severity="error">User create successfully!!</Alert>}
+          {authError && <Alert severity="error">{authError}</Alert>}
               </FormControl>
             </FormControl>
           </Grid>
+         
           <Grid sx={{ mt: 20 }} item xs={12} md={6}>
             <img style={{ width: "100%" }} src={login} alt="" />
           </Grid>

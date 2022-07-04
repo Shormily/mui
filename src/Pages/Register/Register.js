@@ -5,13 +5,15 @@ import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { Container, Grid, Typography, Button, TextField } from "@mui/material";
+import { Container, Grid, Typography, Button, TextField, CircularProgress, Alert } from "@mui/material";
 import login from "../images/login.png";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
 // import useFirebase from "../Hooks/useFirebase";
 
 export default function Register() {
+  const {isLoading,user,registerNewUser}= useAuth();
   const [loginData, setLoginData] = useState({});
   const handleOnChange = (e) => {
     const field = e.target.name;
@@ -24,6 +26,7 @@ export default function Register() {
   const handleLoginSubmit = (e) => {
     if (loginData.password !== loginData.password2) {
       alert("Your password didnt mach");
+      // loginUser(loginData)
       return;
     }
 
@@ -58,7 +61,7 @@ export default function Register() {
     <div>
       <Container>
         <Grid container spacting={2}>
-          <Grid sx={{ mt: 2 }} item xs={12} md={6}>
+          {!isLoading && <Grid sx={{ mt: 2 }} item xs={12} md={6}>
             <Typography
               sx={{ mt: 35, mb: 2, color: "darkgreen" }}
               variant="h3"
@@ -136,7 +139,7 @@ export default function Register() {
               name="password"
             >
               <InputLabel htmlFor="standard-adornment-password">
-                Re-type-Password
+                Password
               </InputLabel>
 
               <Input
@@ -171,14 +174,24 @@ export default function Register() {
                 style={{ backgroundColor: "darkblue", marginTop: 20 }}
                 variant="contained"
                 sx={{ width: "50%" }}
+                onClick={registerNewUser}
               >
                 Register
+              </Button>
+              <Button
+                style={{ backgroundColor: "darkblue", marginTop: 20 }}
+                variant="contained"
+                sx={{ width: "50%" }}
+              >
+                Google Log In
               </Button>
             </FormControl>
           
             </FormControl>
-            
-          </Grid>
+            {isLoading && <CircularProgress/>}
+          {user?.email &&  <Alert style={{width: "50%"}} severity="error">User create successfully!!</Alert>}
+          </Grid>}
+         
           <Grid sx={{ mt: 20 }} item xs={12} md={6}>
             <img style={{ width: "100%" }} src={login} alt="" />
           </Grid>

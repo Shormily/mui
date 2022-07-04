@@ -7,12 +7,14 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import useAuth from "../Hooks/useAuth";
+import  "./Nav.css";
 // import useAuth from "../Hooks/useAuth";
 // import useFirebases from "../Hooks/useFirebases";
 // import useAuth from '../Hooks/useAuth';
 
 const Navigation = () => {
-  // const { user, logOut } = useFirebases();
+  const { user, logout } = useAuth();
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -39,16 +41,40 @@ const Navigation = () => {
             >
               <Button color="inherit">Appointment</Button>
             </NavLink>
-            <NavLink
-              to="/logins"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <Button color="inherit">Log In</Button>
-            </NavLink>
+           
            
 
            
-             
+             {!user?.email && (
+               <NavLink
+              to="/logins"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+            <Button color="inherit">Log In</Button>
+            </NavLink>
+               
+              )}
+              
+
+              {user?.email && (
+                
+                 <NavLink
+              to="/logins"
+              onClick={logout}
+              style={{ textDecoration: "none",  color: "white" }}
+            >
+               <span>
+                {user?.photoURL ? (
+                  
+                  <img 
+                    
+        className="user-img" src={user.photoURL} alt="" />
+                ) : (
+                  <small className="text-light ms-3">{user?.displayName}</small>
+                )}
+              </span>
+               </NavLink>
+              )} 
             {/* Ata react router v5 so shie roule a kaj krta hobe.. */}
           </Toolbar>
         </AppBar>
