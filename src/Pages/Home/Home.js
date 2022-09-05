@@ -1,15 +1,19 @@
 import React from 'react';
-import AppointmentBanner from '../AppointmentBanner/AppointmentBanner';
-import Banner from '../Banner/Banner';
-import Services from '../Services/Services';
+import Firstpart from '../Firstpart/Firstpart';
+import Firstpart3 from '../Firstpart3/Firstpart3';
+// import Banner from '../Banner/Banner';
+import Testimonial from '../Testimonial/Testimonial';
 
 
 const Home = () => {
     return (
         <>
-<Banner/>
-<Services/>
-<AppointmentBanner/>
+{/* <Banner/> */}
+<Firstpart/>
+<Firstpart3/>
+<Testimonial/>
+
+
       </>
     );
 };

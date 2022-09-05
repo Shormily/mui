@@ -3,18 +3,19 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigation from "./Pages/Navigation/Navigation";
 import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
-import Appointment from "./Pages/Appointment/Appointment";
-import Register from "./Pages/Register/Register";
+
 import Logins from "./Pages/Logins/Logins";
 import Footer from "./Pages/Footer/Footer";
 import AuthProvider from "./Pages/Hooks/AuthProvider";
-import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
+import FAQ from "./Pages/FAQ/FAQ.js";
+import Contact from "./Pages/Contact/Contact";
+import Product from "./Pages/Product/Product";
 
 function App() {
   return (
     <>
-    <AuthProvider>
-    <Router>
+      <AuthProvider>
+        <Router>
           <Navigation />
           <br />
           <Switch>
@@ -27,21 +28,23 @@ function App() {
             <Route path="/about">
               <About />
             </Route>
-            <PrivateRoute path="/appointment">
-              <Appointment />
-            </PrivateRoute>
-
-            <Route path="/register">
-              <Register />
+            <Route path="/faq">
+              <FAQ/>
             </Route>
+            <Route path="/product">
+              <Product/>
+            </Route>
+            <Route path="/contact">
+              <Contact/>
+            </Route>
+
             <Route path="/logins">
               <Logins />
             </Route>
           </Switch>
-          <Footer/>
+          <Footer />
         </Router>
-    </AuthProvider>
-       
+      </AuthProvider>
     </>
   );
 }

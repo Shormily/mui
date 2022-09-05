@@ -1,0 +1,94 @@
+[
+  {
+    "id": 1,
+    "name": "Buisness Work",
+    "img": "https://i.ibb.co/YZxgNvm/Business.jpg",
+    "price":3567,
+    "description": "Erythema multiforme is a skin reaction that can be triggered by an infection or some medicines. It's usually mild and goes away in a few weeks. There's also a rare, severe form that can affect the mouth, genitals and eyes and can be life-threatening. This is known as erythema multiforme major. "
+  },
+  {
+    "id": 2,
+    "name": "Buisness-source-group",
+    "img": "https://i.ibb.co/bNfS1YF/busnessresourcs.png",
+    "description": "General surgeons are doctors who specialize in surgical procedures. Surgery is any procedure that alters body tissues to  or treat a medical condition. A general surgeon is part of a surgical  includes an anesthesiologist, nurses, and surgical technicians.This Disease good treatment our hospital.",
+    "price":3567
+  },
+  {
+    "id": 3,
+    "name": "New Work Job",
+    "price":3567,
+    "img": "https://i.ibb.co/z44W1Q2/Casenwork.jpg",
+    "description": "This is when your kidneys are damaged over time. You might not have severe symptoms until the disease is more advanced. But if your doctor catches it early, medications and lifestyle changes may help you avoid more damage.This Disease good treatment our hospital."
+  },
+
+  {
+    "id": 4,
+    "name": "Accounting Discuation",
+    "price":3567,
+    "img": "https://i.ibb.co/pRfWZhw/hm1.jpg",
+    "description": "The globally escalating thyroid nodule incidence rates may be only partially ascribed to better diagnostics, allowing for the assessment of environmental risk factors on thyroid disease. Endocrine disruptors or thyroid-disrupting chemicals (TDC) like bisphenol This Disease good treatment our hospital."
+  },
+  {
+    "id": 5,
+    "name": "Study with accounting",
+    "price":3567,
+    "img": "https://i.ibb.co/xYLjXwn/hm2.jpg",
+    "description": "Plastic surgery restores and improves function, as well as appearance. It can involve surgery on any part of the anatomy, except the central nervous system, including,Skin,  birthmarks, and tattoo removal Maxillofacial Congenital anomalies, cleft palate, and cleft lip.This Disease good treatment our hospital."
+  },
+
+  {
+    "id": 6,
+    "name": "Frendship with your clients",
+    "price":3567,
+    "img": "https://i.ibb.co/CwSnrkh/hm3.jpg",
+    "description": "Diabetes is a chronic (long-lasting) health condition that affects how your body turns food into energy.Most of the food you eat is broken down into sugar (also called glucose) including,Skin and released into your bloodstream. When your blood sugar goes up, it signals your pancreas to good treatment release insulin. "
+  },
+
+  {
+    "id": 7,
+    "name": "Accounting Math",
+    "price":3567,
+    "img": "https://i.ibb.co/9ZgnfGy/hm4.jpg",
+    "description": "A neurologist can help identify the cause of symptoms and create a treatment plan for both common and complex neurological conditions.During a neurological exam, instruments, such as lights and reflex hammers, may be used to assess the nervous system. Motor skills,balance,best treated by a neurologist."
+  },
+  {
+    "id": 8,
+    "name": "Audit Checklist",
+    "price":3567,
+    "img": "https://i.ibb.co/G39LgDQ/hm5.jpg",
+    "description": "A cardiologist specializes in diagnosing and treating diseases of the cardiovascular system. The cardiologist will carry out tests, and they may perform some procedures, such as heart catheterizations, angioplasty, or inserting a pacemaker,they are here and all the operations are done best treated with great care."
+  },
+  {
+    "id": 9,
+    "name": "Business Calculation",
+    "price":3567,
+    "img": "https://i.ibb.co/frztXdB/hm6.jpg",
+    "description": "The definition of sexual dysfunction is the inability to have a satisfactory sexual relationship. This definition depends on each person's own interpretation on what he judges satisfactory. In general, sexual dysfunction can affect the quality of life and, important can be the first  or psychological problem."
+    
+  },
+
+  {
+    "id": 10,
+    "price":3567,
+    "img": "https://i.ibb.co/NrH5Whg/Tax.jpg",
+    "name": "Tax under Work",
+    "description": "It takes different machines to deliver the baby, they are here and all the operations are done with great care.Erythema multiforme mainly affects adults under 40 seriously and evaluated.This Disease good treatment our hospital. although it can happen at any age.This Disease good treatment our hospital."
+    
+  },
+  {
+    "id": 11,
+    "name": "Group Work",
+    "price":3567,
+    "img": "https://i.ibb.co/5kwcYM1/Teamwork.jpg",
+    "description": "A cardiologist specializes in diagnosing and treating diseases of the cardiovascular system. The cardiologist will carry out tests, and they may perform some procedures, such as heart catheterizations, angioplasty, or inserting a pacemaker,they are here and all the operations are done best treated with great care."
+   
+  },
+  {
+    "id": 12,
+    "name": "Hark Work Advice",
+    "price":3567,
+    "img": "https://i.ibb.co/m622y8S/2.jpg",
+    "description": "It takes different machines to deliver the baby, they are here and all the operations are done with great care.Erythema multiforme mainly affects adults under 40 seriously and evaluated.This Disease good treatment our hospital. although it can happen at any age.This Disease good treatment our hospital."
+
+  }
+]

@@ -1,0 +1,18 @@
+@media screen and (min-width: 0px) and (max-width: 400px) {
+  .theme {   background: linear-gradient(rgba(127, 231, 239, 0.755), rgba(127, 185, 248, 0.4)),
+    url(../images/bg.png) no-repeat center center; }
+}
+@media screen and (min-width: 401px) and (max-width: 599px) {
+  .theme { background: linear-gradient(rgba(127, 231, 239, 0.755), rgba(127, 185, 248, 0.4)),
+    url(../images/bg.png) no-repeat center center; }
+}
+@media screen and (min-width: 600px) {
+  .theme { background: linear-gradient(rgba(127, 231, 239, 0.755), rgba(127, 185, 248, 0.4)),
+    url(../images/bg.png) no-repeat center center; }
+    
+}
+
+
+.vol{
+  color: rgba(128, 128, 128, 0.58);
+}

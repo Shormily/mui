@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import inisilizeAuthentication from "../Firebase/Firebase.init"
 import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged,signOut, createUserWithEmailAndPassword } from "firebase/auth";
-import { useHistory } from "react-router-dom";
+import swal from "sweetalert";
 
 inisilizeAuthentication();
 const useFirebases = () =>{
@@ -9,36 +9,44 @@ const useFirebases = () =>{
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-    const history = useHistory();
+   
     const auth = getAuth()
     const googleProvider = new GoogleAuthProvider();
     
-
-
-    const registerNewUser = (email,password)=>{
-        setIsLoading(true);
-        createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential)=>{
-            const user =userCredential.user;
-          
-            console.log(user)
-           
-        })
-        .catch((error) =>{
-        //  const errorCode = error.code;
-         setAuthError(error.message)
-        })
-        .finally(() => setIsLoading(false));
-      }
+    const createNewUserByEmail = ( email, password) => {
+        createUserWithEmailAndPassword( email, password)
+          .then((result) => {
+            setUser(result.user);
+          })
+          .catch((error) => {
+            setError(error.message);
+          });
+      };
+    
+    
+      
+     
     const signInUsingGoogle = (location,history) =>{
         setIsLoading(true)
-       signInWithPopup(auth, googleProvider)
+       signInWithPopup(auth, googleProvider )
        .then(result =>{
-           console.log(result.user);
-           setUser(result.user);
-           history.push('/')
+        //    console.log(result.user);
+           const distination = location?.state?.from || '/';
+           console.log(distination)
+           history.replace(distination);
+           
+           swal({
+            title: "Successfully Sign In!!",
+            icon: "success",
+          });
+         
+          
        })
        .catch(error =>{
+        swal({
+            text: error.message,
+            icon: "error",
+          });
         setAuthError(error.message)
        })
        .finally(() => setIsLoading(false));
@@ -70,7 +78,7 @@ const useFirebases = () =>{
         error,
         signInUsingGoogle,
         logout,
-        registerNewUser,
+        createNewUserByEmail,
         // isLoading,
         authError,
         setIsLoading
